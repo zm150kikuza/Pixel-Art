@@ -50,8 +50,11 @@
       <section class="controls" aria-label="Pixel art controls">
         <div class="control-group size-group">
           <div class="control-heading"><span>03</span><h2>PIXEL SIZE</h2><output id="pixelOutput">16</output></div>
-          <input id="pixelSize" type="range" min="8" max="64" value="16" step="2" aria-label="Pixel size" />
+          <input id="pixelSize" type="range" min="2" max="64" value="16" step="1" aria-label="Pixel size" />
           <div class="range-labels"><span>CHUNKY</span><span>DETAILED</span></div>
+          <div class="pixel-presets" aria-label="Quick pixel sizes">
+            <button type="button" data-size="2">2×</button><button type="button" data-size="4">4×</button><button type="button" data-size="8">8×</button><button type="button" data-size="16" class="active">16×</button>
+          </div>
         </div>
 
         <div class="control-group palette-group">
