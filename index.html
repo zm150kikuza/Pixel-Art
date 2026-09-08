@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A browser-based pixel art image converter." />
+    <title>Pixel Art Maker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <a class="brand" href="./" aria-label="Pixel Art Maker home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>PIXEL <em>ART</em> MAKER</span>
+        </a>
+        <p>Turn any photo into delightfully chunky pixel art.</p>
+      </header>
+
+      <section class="workspace" aria-label="Pixel art editor">
+        <aside class="controls-panel">
+          <div class="panel-heading">
+            <span class="eyebrow">01 / SOURCE</span>
+            <h1>Make it pixel-perfect.</h1>
+          </div>
+
+          <label class="drop-zone" id="dropZone" for="imageInput">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <strong>Choose an image</strong>
+            <span>or drag and drop it here</span>
+            <small>JPG, PNG, WebP, GIF</small>
+          </label>
+          <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+
+          <div class="control-group">
+            <div class="label-row">
+              <label for="pixelSize">Pixel size</label>
+              <output id="pixelSizeOutput" for="pixelSize">12 px</output>
+            </div>
+            <input id="pixelSize" type="range" min="2" max="40" value="12" />
+            <div class="range-notes"><span>Fine</span><span>Chunky</span></div>
+          </div>
+
+          <div class="control-group">
+            <label for="palette">Colour palette</label>
+            <select id="palette">
+              <option value="original">Original colours</option>
+              <option value="gameboy">Game Boy</option>
+              <option value="nes">NES classic</option>
+              <option value="arcade">Arcade neon</option>
+              <option value="pastel">Soft pastel</option>
+              <option value="mono">Monochrome</option>
+            </select>
+            <div class="swatches" id="swatches" aria-label="Selected palette colours"></div>
+          </div>
+
+          <div class="toggle-row">
+            <div>
+              <label for="grayscale">Grayscale</label>
+              <p>Remove colour before rendering</p>
+            </div>
+            <input class="toggle" id="grayscale" type="checkbox" role="switch" />
+          </div>
+
+          <div class="actions">
+            <button class="button secondary" id="resetButton" type="button">Reset</button>
+            <button class="button primary" id="downloadButton" type="button">Download PNG <span aria-hidden="true">↓</span></button>
+          </div>
+        </aside>
+
+        <section class="preview-panel">
+          <div class="preview-topline">
+            <span class="eyebrow">02 / PREVIEW</span>
+            <span class="status" id="imageStatus" aria-live="polite">Demo artwork</span>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="previewCanvas" aria-label="Pixel art preview"></canvas>
+          </div>
+          <p class="hint">Your image stays on this device. Nothing is uploaded.</p>
+        </section>
+      </section>
+      <footer>Built for making tiny worlds from big pictures.</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
