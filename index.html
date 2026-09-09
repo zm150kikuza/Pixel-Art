@@ -61,6 +61,13 @@
           <div class="control-heading"><span>04</span><h2>PALETTE</h2></div>
           <div class="palette-preset-row" id="palettePresets" aria-label="Palette presets"></div>
           <div class="palette-custom"><label for="paletteInput">CUSTOM</label><input id="paletteInput" type="text" spellcheck="false" value="#2d1b45, #6b3fa0, #f1c96b, #f8f0d8" aria-label="Custom palette colors separated by commas" /><button type="button" class="mini-button" id="applyPalette">APPLY</button></div>
+          <button class="more-button" id="paletteMore" type="button" aria-expanded="false" aria-controls="paletteMorePanel">MORE <span>+</span></button>
+          <div class="palette-more-panel" id="paletteMorePanel" hidden>
+            <label class="palette-select" for="colorCount">AUTO COLORS <select id="colorCount"><option value="2">2 COLORS</option><option value="4" selected>4 COLORS</option><option value="8">8 COLORS</option><option value="16">16 COLORS</option></select></label>
+            <button class="mini-button auto-palette" id="autoPalette" type="button">AUTO FROM IMAGE</button>
+            <label class="switch-line dither-line"><span>DITHERING</span><input id="dither" type="checkbox" /><i></i></label>
+            <p id="paletteNote" role="status">AUTO PALETTE FINDS THE MOST COMMON IMAGE COLORS.</p>
+          </div>
         </div>
 
         <div class="control-group adjust-group">
